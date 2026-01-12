@@ -32,6 +32,7 @@ body{
     text-align: center;
     padding: 5px;
     border-bottom: 2px solid;
+    font-weight: 600;
 }
 
 .inputDiv{
@@ -56,6 +57,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2),  0 4px 6px 0 rgba(0, 0, 0, 0.19);
 }
 
 .actionBtn{
@@ -71,6 +73,12 @@ body{
     border-radius: 6px;
     border: 1px solid;
 }
+
+.actionBtn:hover{
+    cursor: pointer;
+    background-color: rgb(26, 197, 197);
+}
+
 
 .task{
     font-size: larger;

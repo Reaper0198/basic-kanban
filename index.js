@@ -44,24 +44,19 @@ document.addEventListener('click', (e) => {
     const taskDiv = btn.closest('.taskTemp');
 
     if (btn.dataset.action === "delete") {
-        console.log("btn clicked..")
         taskDiv.remove();
     }
     else if (btn.dataset.action === "move") {
         taskDiv.remove();
-        console.log("deleting the task div..")
         if (taskDiv.dataset.status === 'toDo') {
-            console.log("moving to in Progress...");
             inProgressDiv.appendChild(taskDiv);
             taskDiv.dataset.status = 'inProgress';
         }
         else if (taskDiv.dataset.status === 'inProgress') {
-            console.log("moving to in Review...");
             inReviewDiv.appendChild(taskDiv);
             taskDiv.dataset.status = 'inReview';
         }
         else if (taskDiv.dataset.status === 'inReview') {
-            console.log("moving to in done...");
             inDoneDiv.appendChild(taskDiv);
             taskDiv.dataset.status = 'inDone';
             taskDiv.getElementsByClassName("actionBtn")[1].remove();

@@ -9,6 +9,7 @@ document.addEventListener('click', (e) => {
     if (btn.dataset.action === 'create') {
         const newTaskInput = document.getElementById("newTask");
         const newTask = newTaskInput.value;
+        if(newTask === null) return;
         newTaskInput.value = "";
         var newTaskDiv = document.createElement('div');
         newTaskDiv.classList.add('taskTemp');

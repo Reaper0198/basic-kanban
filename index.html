@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="headingDiv">BASIC KANBAN</div>
+    <div class="workStation">
+        <div id="toDoDiv" class="toDoDiv list">
+            <div class="toDoHeading heading"> TO DO</div>
+            <div class="inputDiv">
+                <input id="newTask" class="inputField" placeholder="add new Task..." type="text">
+                <div data-action="create" class="addBtn actionBtn" onclick="addTask()">ADD</div>
+            </div>
+            <div data-status='toDo' class="taskTemp">
+                <p class="task">Go to gym</p>
+                <div>
+                    <div data-action="delete" class="actionBtn">Del</div>
+                    <div data-action="move" class="actionBtn">move</div>
+
+                </div>
+            </div>
+        </div>
+        <div id='inProgressDiv' class="list">
+            <div class="inProgressHeading heading">IN PROGRESS</div>
+        </div>
+        <div id="inReviewDiv" class="list">
+            <div class="inReviewHeading heading">IN REVIEW</div>
+        </div>
+        <div id="inDoneDiv" class="doneDiv list">
+            <div class="doneHeading heading">DONE</div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

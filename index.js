@@ -66,6 +66,11 @@ document.addEventListener('click', (e) => {
         return;
 
     }
+    if(btn.dataset.action === 'clear'){
+        localStorage.clear();
+        window.location.reload();
+        return;
+    }
     var taskDiv = btn.closest('.taskTemp');
     const task = taskDiv.querySelector("#task").innerHTML;
 
@@ -128,8 +133,6 @@ document.addEventListener('click', (e) => {
 })
 
 function removeThisTask(type, task){
-    console.log(type , " " , task);
-    console.log("inside the removeThisTask function");
     var arr = JSON.parse(localStorage.getItem(type));
     var newArr = arr.filter(eachTask => eachTask !== task);
     localStorage.setItem(type, JSON.stringify(newArr));
@@ -143,5 +146,35 @@ function addThisTask(type, task){
 
     }else{
         localStorage.setItem(type, JSON.stringify([task]));
+    }
+}
+
+function loadPrevTasks(){
+    loadThisList('inToDo', inToDoDiv);
+    loadThisList('inProgress', inProgressDiv);
+    loadThisList('inReview', inReviewDiv);
+    loadThisList('inDone', inDoneDiv);
+}
+
+function loadThisList(list, parentDiv){
+    var arr = JSON.parse(localStorage.getItem(list));
+    if(arr){
+        arr.forEach(task => {
+            var newTaskDiv = document.createElement('div');
+            newTaskDiv.classList.add('taskTemp');
+            newTaskDiv.setAttribute('data-status', list);
+            newTaskDiv.innerHTML = `<p id='task'>` + task + `</p><div>
+                        <div data-action="delete" class="actionBtn"">Del</div>
+                        <div data-action="moveRight" class="actionBtn">move >></div> 
+                        <div data-action="moveLeft" class="actionBtn"><< move</div></div>`;
+            parentDiv.appendChild(newTaskDiv);
+            if(list === 'inToDo'){
+                newTaskDiv.getElementsByClassName('actionBtn')[2].style.display = 'none';
+            }
+            else if(list === 'inDone'){
+                newTaskDiv.getElementsByClassName('actionBtn')[1].style.display = 'none';
+            }
+    
+        });
     }
 }

@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-    <div class="headingDiv">BASIC KANBAN</div>
+<body onload="loadPrevTasks()">
+    <div class="navbar">
+        <div class="headingDiv">BASIC KANBAN</div>
+        <div id='clearBtn' class="actionBtn" data-action="clear">CLEAR BOARD</div>
+    </div>
     <div class="workStation">
         <div id="inToDoDiv" class="toDoDiv list">
             <div class="toDoHeading heading"> TO DO</div>
@@ -18,7 +21,7 @@
                 <div data-action="create" class="addBtn actionBtn">ADD</div>
             </div>
             <div data-status='inToDo' class="taskTemp">
-                <p id="task">create a kanban project</p>
+                <p id="task">created by Krishan.</p>
                 <div>
                     <div data-action="delete" class="actionBtn">Del</div>
                     <div data-action="moveRight" class="actionBtn">move >></div>

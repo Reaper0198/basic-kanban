@@ -15,15 +15,13 @@
             <div class="toDoHeading heading"> TO DO</div>
             <div class="inputDiv">
                 <input id="newTask" class="inputField" placeholder="add new Task..." type="text">
-                <div data-action="create" class="addBtn actionBtn" onclick="addTask()">ADD</div>
+                <div data-action="create" class="addBtn actionBtn">ADD</div>
             </div>
             <div data-status='inToDo' class="taskTemp">
-                <p class="task">create a kanban project</p>
+                <p id="task">create a kanban project</p>
                 <div>
                     <div data-action="delete" class="actionBtn">Del</div>
                     <div data-action="moveRight" class="actionBtn">move >></div>
-                    <div data-action="moveLeft" class="actionBtn"><< move</div>
-
                 </div>
             </div>
         </div>

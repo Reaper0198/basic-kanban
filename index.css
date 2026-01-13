@@ -36,11 +36,15 @@ body{
 }
 
 .inputDiv{
-    width: 90%;
-    margin: 5px 10px;
+    width :93%;
+    padding: 5px 10px 5px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top : 0px;
+    background-color: white;
+    border-bottom: 2px solid;
 }
 .inputField{
     width: 100%;
@@ -82,7 +86,7 @@ body{
 }
 
 
-.task{
+#task{
     font-size: larger;
     padding: 0 10px;
     max-width: 70%;
